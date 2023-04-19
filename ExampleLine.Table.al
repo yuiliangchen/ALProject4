@@ -37,7 +37,7 @@ table 50128 "Example Line"
         {   
             Caption = 'Example Description';
             FieldClass = FlowField;
-            CalcFormula = Lookup(Example.Description where("No." = field("Example No.")));
+            CalcFormula = Lookup(Example.Description where("No." = field("Example No.")));
         }
     }
     

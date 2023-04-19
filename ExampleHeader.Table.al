@@ -2,6 +2,8 @@ table 50127 "Example Header"
 {
     DataClassification = CustomerContent;
     Caption = 'Example Header';
+    LookupPageId = "Example Header List";
+    DrillDownPageId = "Example Header List";
     
     fields
     {
