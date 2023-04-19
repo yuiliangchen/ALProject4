@@ -2,6 +2,8 @@ table 50126 "Example Type"
 {
     DataClassification = CustomerContent;
     Caption = 'Example Type';
+    LookupPageId = "Example Types";
+    DrillDownPageId = "Example Types";
     
     fields
     {
@@ -24,28 +26,4 @@ table 50126 "Example Type"
             Clustered = true;
         }
     }
-    
-    var
-        myInt: Integer;
-    
-    trigger OnInsert()
-    begin
-        
-    end;
-    
-    trigger OnModify()
-    begin
-        
-    end;
-    
-    trigger OnDelete()
-    begin
-        
-    end;
-    
-    trigger OnRename()
-    begin
-        
-    end;
-    
 }

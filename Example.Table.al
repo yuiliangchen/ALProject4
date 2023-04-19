@@ -2,6 +2,8 @@ table 50125 Example
 {
     DataClassification = CustomerContent;
     Caption = 'Example';
+    LookupPageId = "Example List";
+    DrillDownPageId = "Example List";
 
     fields
     {
@@ -54,17 +56,16 @@ table 50125 Example
     var
         Example: Record Example;
     begin
-        with Example do begin
-            Example := Rec;
-            ExampleSetup.Get();
-            ExampleSetup.TestField("Example Nos.");
-            if NoSeriesManagement.SelectSeries(ExampleSetup."Example Nos.", 
-                                            OldExample."No. Series", 
-                                            "No. Series") then begin
-                NoSeriesManagement.SetSeries("No.");
-                Rec := Example;
-                exit(true);
-            end;
+        Example := Rec;
+        ExampleSetup.Get();
+        ExampleSetup.TestField("Example Nos.");
+        if NoSeriesManagement.SelectSeries(ExampleSetup."Example Nos.",
+                                        OldExample."No. Series",
+                                        Example."No. Series") then begin
+            NoSeriesManagement.SetSeries(Example."No.");
+            Rec := Example;
+            exit(true);
         end;
+
     end;
 }

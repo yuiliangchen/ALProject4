@@ -1,26 +1,22 @@
-page 50125 "Example Card"
+page 50126 "Example List"
 {
-    PageType = Card;
-    UsageCategory = None;
+    PageType = List;
+    ApplicationArea = All;
+    UsageCategory = Lists;
     SourceTable = Example;
-    Caption = 'Example Card';
+    Caption = 'Example List';
+    Editable = false;
+    CardPageId = "Example Card";
     
     layout
     {
         area(Content)
         {
-            group(General)
+            repeater(General)
             {
-                Caption = 'General';
                 field("No."; Rec."No.")
                 {
-                    ApplicationArea = All;
-                    trigger OnAssistEdit()
-                    begin
-                        if Rec.AssistEdit(xRec) then
-                            CurrPage.Update();                        
-                    end;
-                    
+                    ApplicationArea = All;                    
                 }
                 field(Description; Rec.Description)
                 {
@@ -32,5 +28,5 @@ page 50125 "Example Card"
                 }
             }
         }
-    }
+    }    
 }
