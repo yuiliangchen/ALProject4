@@ -14,6 +14,10 @@ table 50124 "Example Setup"
         {
             TableRelation = "No. Series";
         }
+        field(3; "Document Nos."; Code[20])
+        {
+            TableRelation = "No. Series";
+        }
     }
     
     keys
